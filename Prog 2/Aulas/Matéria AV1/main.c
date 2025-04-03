@@ -1,0 +1,22 @@
+// Matrizes
+//     Leitura
+//     Escrita
+//     Soma
+//     Produto = for(int k = 0; k < 3; k++) {
+//         resultado[i][k] = matrizA[i][k] * matrizB[k][j];
+//     }
+//     Escalar
+//     Diagonais - Principal (i == j) / Secundaria (i + j == TAMANHO - 1)
+//     Triangulos - Superior / Inferior
+
+// Funcoes
+//     Criar
+//     Chamar
+//     Retorno - Void ( a funcao nao retorna) / Tipo ( a funcao retorna)
+//     Parametros
+//     Assinatura
+//     Organizacao
+
+// Ponteiro
+//     Na função tem q escrever no modelo *(vetor + i) (mesma coisa que vetor[i])
+
