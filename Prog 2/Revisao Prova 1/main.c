@@ -109,36 +109,48 @@
 
 //  Peça para o usuário preencher uma matriz 2x4 de alturas e informe a maior e menor altura. Exiba a matriz. -------------------------------------------------------
 
-int main(void){
+// int main(void){
 
-    float Matriz[2][4];
-    float maior,menor;
+//     float Matriz[2][4];
+//     float maior,menor;
 
-    for(int i = 0 ; i < 2 ; i++){
-        for(int j = 0 ; j < 4 ; j++){
-            printf("Valor da %d linha e %d coluna da matriz: ", i+1, j+1);
-            scanf("%f", &Matriz[i][j]);
-        }
-    } 
-    for ( int i = 0; i < 2; i++) {
-        for ( int j = 0; j < 4; j++) {
-            if (Matriz[i][j] > maior) {
-                maior = Matriz[i][j];
-            }
-            if (Matriz[i][j] < menor) {
-                menor = Matriz[i][j];
-            }
-        }
-    }
+//     for(int i = 0 ; i < 2 ; i++){
+//         for(int j = 0 ; j < 4 ; j++){ 
+//             printf("Digite a sua altura para a posicao [%d] [%d] :", i+1, j+1);
+//             scanf("%f", &Matriz[i][j]);
+//         }
+//     } 
+//     for ( int i = 0; i < 2; i++) {
+//         for ( int j = 0; j < 4; j++) {
+//             if (Matriz[i][j] > maior) {
+//                 maior = Matriz[i][j];
+//             }
+//             if (Matriz[i][j] < menor || menor == 0) {
+//                 menor = Matriz[i][j];
+//             }
+//         }
+//     }
 
-    printf("Matriz das alturas:");
-    for (int i = 0; i < 2; i++){
-        for (int j = 0; j < 4; j++){
-            printf("Matriz das alturas:", Matriz[i][j])
-        } 
-    }
+//     printf("Matriz das alturas:");
+//     for (int i = 0; i < 2; i++){
+//         for (int j = 0; j < 4; j++){
+//             printf ("%.1f \n", Matriz[i][j]);
+//         } 
+//         printf("\n");
+//     }
     
+//     printf("maior altura: %.2f \n", maior);
+//     printf("menor altura: %.2f \n", menor);
+
+//     return 0;
+
+// }
+
+// Faça o produto entre uma matriz e um escalar, sendo a matriz 3x2. Todos os valores serão informados pelo usuário.
+
+int main (void){
+
+    int Matriz
 
     return 0;
-
 }
