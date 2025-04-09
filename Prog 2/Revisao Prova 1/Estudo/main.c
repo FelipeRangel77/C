@@ -149,37 +149,37 @@
 
 // Faça o produto entre uma matriz e um escalar, sendo a matriz 3x2. Todos os valores serão informados pelo usuário.
 
-int main(void){
+// int main(void){
 
-    int Matriz[3][2];
-    int Escalar = 0;
-    int MatrizResultante [3][2];
+//     int Matriz[3][2];
+//     int Escalar = 0;
+//     int MatrizResultante [3][2];
 
-    for(int i = 0; i < 3; i++) {
-        for(int j = 0; j < 2; j++) {
-            printf("Valor da %d linha e %d coluna da matriz: ", i+1, j+1);
-            scanf("%d", &Matriz[i][j]);
-        }
-        printf("\n");
-    }
+//     for(int i = 0; i < 3; i++) {
+//         for(int j = 0; j < 2; j++) {
+//             printf("Valor da %d linha e %d coluna da matriz: ", i+1, j+1);
+//             scanf("%d", &Matriz[i][j]);
+//         }
+//         printf("\n");
+//     }
 
-    printf("Qual o valor do Escalar: ");
-    scanf("%d", &Escalar);
-    for (int i = 0; i < 3; i++){
-        for ( int j = 0; j < 2; i++){
-            MatrizResultante[i][j] = Matriz[i][j] * Escalar;
-        }
-        printf("\n");
-    }
+//     printf("Qual o valor do Escalar: ");
+//     scanf("%d", &Escalar);
+//     for (int i = 0; i < 3; i++){
+//         for ( int j = 0; j < 2; j++){
+//             MatrizResultante[i][j] = Matriz[i][j] * Escalar;
+//         }
+//         printf("\n");
+//     }
 
-    printf("Matriz resultante:");
-    for(int i = 0; i < 3; i++){
-        for (int j = 0; j < 2; i++){
-            printf("Matriz: %d", MatrizResultante[i][j]);
-        }
-        printf("\n");
-    }
+//     printf("Matriz resultante:");
+//     for(int i = 0; i < 3; i++){
+//         for (int j = 0; j < 2; j++){
+//             printf("[ %d ]", MatrizResultante[i][j]);
+//         }
+//         printf("\n");
+//     }
     
     
-    return 0;
-}
+//     return 0;
+// }
