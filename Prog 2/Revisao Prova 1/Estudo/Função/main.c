@@ -107,7 +107,7 @@
 //     int num = 0;
 
 //     printf("digite um numero: ");
-//     scanf(" %c", &num);
+//     scanf("%d", &num);
 
 //     if(num % 2 == 0){
 //         printf("o numero eh par");
