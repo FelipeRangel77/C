@@ -34,32 +34,39 @@ void verTodasVendas();
 
 int main(){
     carregarArquivo();
-    int opcao;
+    int opcao = -1;
+
     do{
-        printf("\n--MENU --\n");
+        printf("\n-- MENU --\n");
         printf("1. Cadastrar novas vendas\n");
         printf("2. Ver informacoes de uma venda especifica\n");
         printf("3. Ver informacoes de todas as vendas\n");
         printf("4. Encerrar o programa\n");
         printf("Escolha uma opcao: ");
-        scanf("%d", &opcao);
-        switch (opcao){
-          case 1:
-          cadastrarVendas();
-          break;
-          case 2:
-          pesquisarVendaEspecifica();
-          break;
-          case 3:
-          verTodasVendas();
-          break;
-          case 4:
-          printf("Programa encerrado.\n");
-          break;
-          default:
-          printf("Opcaoo invalida. Tente novamente.\n");
+        
+        if (scanf("%d", &opcao) != 1) {
+            printf("Opcao invalida. Tente novamente.\n");
+            while(getchar() != '\n');
+            continue;
         }
-    }while (opcao != 4);
+
+        switch (opcao){
+            case 1:
+                cadastrarVendas();
+                break;
+            case 2:
+                pesquisarVendaEspecifica();
+                break;
+            case 3:
+                verTodasVendas();
+                break;
+            case 4:
+                printf("Programa encerrado.\n");
+                break;
+            default:
+                printf("Opcao invalida. Tente novamente.\n");
+        }
+    } while (opcao != 4);
     return 0;
 }
   
@@ -74,7 +81,7 @@ int validarNome(char *nome){
   
 int validarSexo(char sexo){
     sexo = toupper(sexo);
-    if (sexo != 'M' && sexo != 'F' && sexo != 'N' && strlen(sexo) > 1){
+    if (sexo != 'M' && sexo != 'F' && sexo != 'N'){
         printf("Sexo invalido");
         return 1;
     }
@@ -106,7 +113,7 @@ void carregarArquivo(){
 void salvarArquivo(struct venda v){
     FILE *file = fopen("loja.txt", "a");
     if (!file){
-        printf("Erro ao abrir o arwuivo para salvar.\n");
+        printf("Erro ao abrir o arquivo para salvar.\n");
         return;
     }
     fprintf(file, "%s %c %d %d %c %.2f\n", v.cliente.nome, v.cliente.sexo, v.cliente.idade, v.numeroItens, v.unidadeVenda, v.valorTotal);
@@ -121,12 +128,14 @@ void cadastrarVendas(){
             printf("ERRO! Digite um valor valido!\n");
             while(getchar() != '\n');
             qtd = -1;
+            continue;
         }
         getchar();
     } while (qtd == -1);
 
     for (int i = 0; i < qtd; i++) {
         struct venda nova;
+        int flag = 1;
 
         printf("\nCadastro da venda %d:\n", i + 1);
 
@@ -146,7 +155,7 @@ void cadastrarVendas(){
             if (scanf("%d", &nova.cliente.idade) != 1 || nova.cliente.idade < 0) {
                 printf("ERRO! Digite um valor valido!\n");
                 while(getchar() != '\n');
-                nova.cliente.idade = -1;
+                continue;
             }
         } while (nova.cliente.idade < 0);
 
@@ -156,21 +165,29 @@ void cadastrarVendas(){
         }while (validarUnidadeVenda(nova.unidadeVenda) == 1);
 
         do {
+            flag = 0;
             printf("Valor total da venda: ");
-            if (scanf("%f", &nova.valorTotal) == -1 || nova.valorTotal < 0) {
-              printf("Valor invalido\n");
-              nova.valorTotal = -1;
-            }
-        } while (nova.valorTotal == -1);
-
-        do {
-            printf("Numero de itens: ");
-            if (scanf("%d", &nova.numeroItens) == -1 || nova.numeroItens < 0) {
-                printf("Numero de itens inválido\n");
-                nova.numeroItens = -1;
+            if (scanf("%f", &nova.valorTotal) != 1 || nova.valorTotal < 0) {
+                printf("Valor invalido\n");
+                flag = 1;
+                while (getchar() != '\n');
+                continue;
             }
             getchar();
-        } while (nova.numeroItens == -1);
+        } while (flag == 1);
+
+
+        do {
+            flag = 0;
+            printf("Numero de itens: ");
+            if (scanf("%d", &nova.numeroItens) != 1 || nova.numeroItens < 0) {
+                printf("Numero de itens invalido\n");
+                flag = 1;
+                while(getchar() != '\n');
+                continue;
+            }
+            getchar();
+        } while (flag == 1);
     
         vendas[totalVendas++] = nova;
         salvarArquivo(nova);
@@ -206,18 +223,30 @@ void verTodasVendas(){
     printf("Digite o valor para filtrar as vendas: ");
     scanf("%f", &valorFiltro);
 
-    int totalItens = 0, homens = 0, semSexo = 0, tresItens = 0, unidadeB = 0, idadeMaisNova = 200;
-    float somaTotal = 0, maiorCompra = 0, menorCompraF = -1, media = 0;
-    char nomeMaior[100] = "", nomeMaisNovo[100] = "";
+    int totalItens = 0, homens = 0, semSexo = 0, tresItens = 0, unidadeB = 0, idadeMaisNova = 200, encontrou = 1, qtdMaiorNome = 0;
+    float somaTotal = 0, maiorCompra = 0, menorCompraF = -1, media = 0, valorTotalCompradoresSemSexo = 0;
+    char nomeMaiorCompra[100] = "", nomeMaisNovo[100] = "", maiorNome[100] = "";
 
     for (int i = 0; i < totalVendas; i++) {
+        encontrou = 0;
         struct venda v = vendas[i];
+
+        if (strlen(v.cliente.nome) > qtdMaiorNome) {
+            qtdMaiorNome = strlen(v.cliente.nome);
+            strcpy(maiorNome, v.cliente.nome); 
+        }
 
         if (v.valorTotal < valorFiltro){
             printf("Venda abaixo de %.2f: %s, %.2f\n", valorFiltro, v.cliente.nome, v.valorTotal);
+            encontrou = 0;
+        }
+
+        if (encontrou == 1) {
+          printf("\nNenhuma venda a baixo do valor inserido.\n");
         }
 
         if (v.numeroItens == 3) {
+            
             tresItens++;
         }
 
@@ -231,6 +260,7 @@ void verTodasVendas(){
 
         if (v.cliente.sexo == 'N' || v.cliente.sexo == 'n') {
             semSexo++;
+            valorTotalCompradoresSemSexo += v.valorTotal;
         }
 
         totalItens += v.numeroItens;
@@ -243,7 +273,7 @@ void verTodasVendas(){
         }
         if (v.valorTotal > maiorCompra) {
             maiorCompra = v.valorTotal;
-            strcpy(nomeMaior, v.cliente.nome);
+            strcpy(nomeMaiorCompra, v.cliente.nome);
         }
         if (v.cliente.idade < idadeMaisNova){
             idadeMaisNova = v.cliente.idade;
@@ -254,6 +284,11 @@ void verTodasVendas(){
             strcpy(nomeMaisNovo, v.cliente.nome);
         }
     }
+    
+    
+    
+    printf("Valor total comprado por compradores que nao quiseram informar o sexo: %.2f\n", valorTotalCompradoresSemSexo);
+    
     media = totalVendas > 0 ? somaTotal / totalVendas : 0;
     
     printf("Vendas com exatamente 3 itens: %d\n", tresItens);
@@ -263,12 +298,36 @@ void verTodasVendas(){
     printf("Valor total das compras: %.2f\n", somaTotal);
     printf("Valor medio das compras: %.2f\n", media);
     if (menorCompraF >= 0) {
-        printf("Compra mais barata feita por mulher: %.2f\n", menorCompraF);
+      printf("Compra mais barata feita por mulher: %.2f\n", menorCompraF);
     }
-    if (strlen(nomeMaior) > 0) {
-        printf("Cliente com maior compra: %s\n", nomeMaior);
+    if (strlen(maiorNome) > 0) {
+      printf("\nCliente com maior nome: %s\n", maiorNome);
     }
+
+    float totalVendasMaiorNome = 0;
+    printf("Dados da venda do cliente com maior nome:\n");
+    for (int i = 0; i < totalVendas; i++){
+        if(strcmp(vendas[i].cliente.nome, maiorNome) == 0){
+            encontrou = 1;
+            printf("\nItens: %d, Unidade: %c, Valor: %.2f\n", vendas[i].numeroItens, vendas[i].unidadeVenda, vendas[i].valorTotal);
+            totalVendasMaiorNome += vendas[i].valorTotal;
+        }
+    }
+    printf("Total gasto: %.f\n", totalVendasMaiorNome);
+    
+    
     if (strlen(nomeMaisNovo) > 0) {
-        printf("Cliente mais novo: %s\n", nomeMaisNovo);
+      printf("\nCliente mais novo: %s\n", nomeMaisNovo);
     }
-}
+
+    float totalVendasMaisNovo = 0;
+    printf("Dados da venda do cliente mais novo:\n");
+    for (int i = 0; i < totalVendas; i++){
+        if(strcmp(vendas[i].cliente.nome, nomeMaisNovo) == 0){
+            encontrou = 1;
+            printf("\nItens: %d, Unidade: %c, Valor: %.2f\n", vendas[i].numeroItens, vendas[i].unidadeVenda, vendas[i].valorTotal);
+            totalVendasMaisNovo += vendas[i].valorTotal;
+        }
+    }
+    printf("Total gasto: %.f\n", totalVendasMaisNovo);
+  }

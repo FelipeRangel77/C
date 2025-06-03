@@ -1,0 +1,6 @@
+Katarina f 19 3 b 50.00
+Guilherme`` n 19 1 b 75.00
+Katarina f 19 4 b 50.00
+
+Guilherme n 19 1 b 25.00
+Enzo m 20 1 c 150.00
