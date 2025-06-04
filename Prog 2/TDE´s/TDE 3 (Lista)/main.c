@@ -26,8 +26,6 @@
 //     return 0;
 // }
 
-
-
 //! Número 2
 // struct Aluno {
 //     char nome[50];
@@ -51,7 +49,6 @@
 //     printf("Media do aluno: %.2f\n", calcularMedia(aluno1));
 //     return 0;
 // }
-
 
 //! Número 3
 // struct Data {
@@ -80,7 +77,6 @@
 //     imprimirAluno(aluno1);
 //     return 0;
 // }
-
 
 //! Número 4
 // struct Tempo {
@@ -115,8 +111,6 @@
 //     imprimirTempo(dh.tempo);
 //     return 0;
 // }
-
-
 
 //! Número 5
 // struct ContaBancaria {
@@ -164,7 +158,6 @@
 //     return 0;
 // }
 
-
 //! Número 6
 // struct Carro {
 //     char marca[50];
@@ -191,7 +184,6 @@
 
 //     return 0;
 // }
-
 
 //! Número 7
 // struct Funcionario {
@@ -225,7 +217,6 @@
 //     free(funcionarios);
 //     return 0;
 // }
-
 
 //! Número 8
 // struct Cliente {
@@ -263,8 +254,6 @@
 //     return 0;
 // }
 
-
-
 //! Número 9
 // struct Produto {
 //     char nome[50];
@@ -300,8 +289,6 @@
 //     free(produtos);
 //     return 0;
 // }
-
-
 
 //! Número 10
 // struct Produto {
@@ -344,8 +331,6 @@
 
 //     return 0;
 // }
-
-
 
 //! Número 11
 // struct Pessoa {
@@ -394,8 +379,6 @@
 //     return 0;
 // }
 
-
-
 //! Número 12
 // void copiarLinhasImpares(FILE *origem, FILE *destino) {
 //     char linha[256];
@@ -427,7 +410,6 @@
 //     return 0;
 // }
 
-
 //! Número 13
 // int main() {
 //     FILE *origem = fopen("origem.txt", "r");
@@ -450,7 +432,6 @@
 //     return 0;
 // }
 
-
 //! Número 14
 // int main() {
 //     FILE *arquivo = fopen("numeros.txt", "r");
@@ -471,7 +452,6 @@
 
 //     return 0;
 // }
-
 
 //! Número 15
 // struct Aluno {
@@ -506,7 +486,6 @@
 
 //     return 0;
 // }
-
 
 //! Número 16
 // struct Aluno {
@@ -551,8 +530,6 @@
 //     return 0;
 // }
 
-
-
 //! Número 17
 // struct Colegio {
 //     char nome[50];
@@ -588,8 +565,6 @@
 
 //     return 0;
 // }
-
-
 
 //! Número 18
 // struct Pessoa {
@@ -638,8 +613,6 @@
 //     return 0;
 // }
 
-
-
 //! Número 19
 // int main() {
 //     FILE *arquivo = fopen("texto.txt", "r");
@@ -663,7 +636,6 @@
 //     return 0;
 // }
 
-
 //! Número 20
 // int main() {
 //     FILE *arquivo = fopen("texto.txt", "r");
@@ -686,7 +658,6 @@
 
 //     return 0;
 // }
-
 
 //! Número 21
 // int main() {
@@ -719,7 +690,6 @@
 //     return 0;
 // }
 
-
 //! Número 22
 // int main() {
 //     int n;
@@ -748,8 +718,6 @@
 //     free(array);
 //     return 0;
 // }
-
-
 
 //! Número 23
 // int main() {
@@ -781,8 +749,6 @@
 //     free(copia);
 //     return 0;
 // }
-
-
 
 //! Número 24
 // int main() {
@@ -825,8 +791,6 @@
 //     free(array);
 //     return 0;
 // }
-
-
 
 //! Número 25
 // int main() {
