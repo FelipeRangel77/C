@@ -2,33 +2,33 @@
 #include <stdlib.h>
 #include <string.h>
 
-//Q1
-struct Livro {
-    char titulo[50];
-    char autor[50];
-    int paginas;
-};
+//! numero 1
+// struct Livro {
+//     char titulo[50];
+//     char autor[50];
+//     int paginas;
+// };
 
-void imprimirLivro(struct Livro l) {
-    printf("Titulo: %s\nAutor: %s\nPaginas: %d\n", l.titulo, l.autor, l.paginas);
-}
+// void imprimirLivro(struct Livro l) {
+//     printf("Titulo: %s\nAutor: %s\nPaginas: %d\n", l.titulo, l.autor, l.paginas);
+// }
 
-int main() {
-    struct Livro livro1;
-    printf("Digite o titulo do livro: ");
-    fgets(livro1.titulo, 50, stdin);
-    printf("Digite o autor do livro: ");
-    fgets(livro1.autor, 50, stdin);
-    printf("Digite o numero de paginas: ");
-    scanf("%d", &livro1.paginas);
+// int main() {
+//     struct Livro livro1;
+//     printf("Digite o titulo do livro: ");
+//     fgets(livro1.titulo, 50, stdin);
+//     printf("Digite o autor do livro: ");
+//     fgets(livro1.autor, 50, stdin);
+//     printf("Digite o numero de paginas: ");
+//     scanf("%d", &livro1.paginas);
 
-    imprimirLivro(livro1);
-    return 0;
-}
+//     imprimirLivro(livro1);
+//     return 0;
+// }
 
 
 
-//Q2
+//! Número 2
 // struct Aluno {
 //     char nome[50];
 //     int matricula;
@@ -53,7 +53,7 @@ int main() {
 // }
 
 
-//Q3
+//! Número 3
 // struct Data {
 //     int dia, mes, ano;
 // };
@@ -82,7 +82,7 @@ int main() {
 // }
 
 
-//Q4
+//! Número 4
 // struct Tempo {
 //     int hora, minuto, segundo;
 // };
@@ -118,7 +118,7 @@ int main() {
 
 
 
-//Q5
+//! Número 5
 // struct ContaBancaria {
 //     int numero;
 //     char titular[50];
@@ -165,7 +165,7 @@ int main() {
 // }
 
 
-//Q6
+//! Número 6
 // struct Carro {
 //     char marca[50];
 //     char modelo[50];
@@ -193,7 +193,7 @@ int main() {
 // }
 
 
-//Q7
+//! Número 7
 // struct Funcionario {
 //     char nome[50];
 //     float salario;
@@ -227,7 +227,7 @@ int main() {
 // }
 
 
-//Q8
+//! Número 8
 // struct Cliente {
 //     char nome[50];
 //     int idade;
@@ -265,7 +265,7 @@ int main() {
 
 
 
-//Q9
+//! Número 9
 // struct Produto {
 //     char nome[50];
 //     float preco;
@@ -303,7 +303,7 @@ int main() {
 
 
 
-//Q10
+//! Número 10
 // struct Produto {
 //     int codigo;
 //     char descricao[30];
@@ -347,7 +347,7 @@ int main() {
 
 
 
-//Q11
+//! Número 11
 // struct Pessoa {
 //     char sexo;
 //     char olhos[10];
@@ -396,7 +396,7 @@ int main() {
 
 
 
-//Q12
+//! Número 12
 // void copiarLinhasImpares(FILE *origem, FILE *destino) {
 //     char linha[256];
 //     int numeroLinha = 1;
@@ -428,7 +428,7 @@ int main() {
 // }
 
 
-//Q13
+//! Número 13
 // int main() {
 //     FILE *origem = fopen("origem.txt", "r");
 //     FILE *destino = fopen("destino.txt", "w");
@@ -451,7 +451,7 @@ int main() {
 // }
 
 
-//Q14
+//! Número 14
 // int main() {
 //     FILE *arquivo = fopen("numeros.txt", "r");
 //     int num, soma = 0, total = 0;
@@ -473,7 +473,7 @@ int main() {
 // }
 
 
-//Q15
+//! Número 15
 // struct Aluno {
 //     char nome[50];
 //     int matricula;
@@ -508,7 +508,7 @@ int main() {
 // }
 
 
-//Q16
+//! Número 16
 // struct Aluno {
 //     char nome[50];
 //     int matricula;
