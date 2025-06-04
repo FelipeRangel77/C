@@ -86,7 +86,7 @@
 
 
 
-// #include <stdio.h> //! EXERCÍCIO 
+// #include <stdio.h> //! EXERCÍCIO 3
 // #include <string.h> 
 
 // struct Data {
@@ -399,32 +399,32 @@
 
 
 
-#include <stdio.h>
-#include <string.h>
+// #include <stdio.h>
+// #include <string.h>
 
-int main(void) {
-    char linha[200];
-    FILE *file
-    int qtd = 0;
-    char target[] = "a";
+// int main(void) {
+//     char linha[200];
+//     FILE *file
+//     int qtd = 0;
+//     char target[] = "a";
 
-    file = fopen("bd.txt", "r");
-    if (file == NULL) {
-        printf("Erro ao abrir arquivo!\n");
-        return 1;
-    }
+//     file = fopen("bd.txt", "r");
+//     if (file == NULL) {
+//         printf("Erro ao abrir arquivo!\n");
+//         return 1;
+//     }
 
-    while (fgets(linha, sizeof(linha), file) != NULL) {
-        char *ptr = linha;
+//     while (fgets(linha, sizeof(linha), file) != NULL) {
+//         char *ptr = linha;
 
-        while ((ptr = strstr(ptr, target)) != NULL) {
-            qtd++;
-            ptr += strlen(target);
-        }
-    }
+//         while ((ptr = strstr(ptr, target)) != NULL) {
+//             qtd++;
+//             ptr += strlen(target);
+//         }
+//     }
 
-    fclose(file);
-    printf("A string '%s' foi encontrada %d vezes!\n", target, qtd);
+//     fclose(file);
+//     printf("A string '%s' foi encontrada %d vezes!\n", target, qtd);
 
-    return 0;
-}
+//     return 0;
+// }
