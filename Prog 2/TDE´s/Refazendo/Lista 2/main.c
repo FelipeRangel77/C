@@ -106,3 +106,63 @@
 //! crie uma estrutura DataHora que inclui uma estrutura Data com campos para dia,
 //! mês e ano e uma estrutura Tempo. Aninhe essas estruturas para representar uma data
 //! e hora completa. Crie funções para imprimir a data e a hora separadamente.
+
+struct Tempo{
+    int hora;
+    int minuto;
+    int segundo;
+};
+
+struct Data{
+    int dia;
+    int mes;
+    int ano;
+};
+
+struct DataHora{
+    struct Data data;
+    struct Tempo tempo;
+};
+
+void imprimirData(struct Data a){
+    printf("Data Completa:%d/%d/%d", a.dia, a.mes , a.ano);
+}
+
+void imprimirTempo(struct Tempo a){
+    printf("Horario escrito:%d:%d:%d", a.hora, a.minuto, a.segundo);
+}
+
+
+int main(){
+
+    struct DataHora dh;
+
+    printf("Digite um horario: (horas/minutos/segundos)");
+    scanf("%d %d %d", &dh.tempo.hora, &dh.tempo.minuto, &dh.tempo.segundo);
+    printf("Digte uma Data: (Dia/Mes/Ano)");
+    scanf("%d %d %d", &dh.data.dia, &dh.data.mes,&dh.data.ano);
+
+    imprimirData(dh.data);
+    imprimirTempo(dh.tempo);
+    
+    return 0;
+}
+
+//! 5. Crie uma estrutura chamada ContaBancaria com campos para o número da conta, o
+//! nome do titular e o saldo. Escreva funções para depositar dinheiro na conta, sacar
+//! dinheiro da conta e imprimir o saldo atual.
+
+struct contaBancaria{
+    int numeroConta;
+    char nomeTitular[50];
+    float saldo;
+};
+
+void depositar(struct contaBancaria a){
+
+}
+
+
+int main(){
+
+}
