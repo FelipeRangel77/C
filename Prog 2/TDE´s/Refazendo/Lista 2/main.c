@@ -107,62 +107,114 @@
 //! mês e ano e uma estrutura Tempo. Aninhe essas estruturas para representar uma data
 //! e hora completa. Crie funções para imprimir a data e a hora separadamente.
 
-struct Tempo{
-    int hora;
-    int minuto;
-    int segundo;
-};
+// struct Tempo{
+//     int hora;
+//     int minuto;
+//     int segundo;
+// };
 
-struct Data{
-    int dia;
-    int mes;
-    int ano;
-};
+// struct Data{
+//     int dia;
+//     int mes;
+//     int ano;
+// };
 
-struct DataHora{
-    struct Data data;
-    struct Tempo tempo;
-};
+// struct DataHora{
+//     struct Data data;
+//     struct Tempo tempo;
+// };
 
-void imprimirData(struct Data a){
-    printf("Data Completa:%d/%d/%d", a.dia, a.mes , a.ano);
-}
+// void imprimirData(struct Data a){
+//     printf("Data Completa:%d/%d/%d", a.dia, a.mes , a.ano);
+// }
 
-void imprimirTempo(struct Tempo a){
-    printf("Horario escrito:%d:%d:%d", a.hora, a.minuto, a.segundo);
-}
+// void imprimirTempo(struct Tempo a){
+//     printf("Horario escrito:%d:%d:%d", a.hora, a.minuto, a.segundo);
+// }
 
 
-int main(){
+// int main(){
 
-    struct DataHora dh;
+//     struct DataHora dh;
 
-    printf("Digite um horario: (horas/minutos/segundos)");
-    scanf("%d %d %d", &dh.tempo.hora, &dh.tempo.minuto, &dh.tempo.segundo);
-    printf("Digte uma Data: (Dia/Mes/Ano)");
-    scanf("%d %d %d", &dh.data.dia, &dh.data.mes,&dh.data.ano);
+//     printf("Digite um horario: (horas/minutos/segundos)");
+//     scanf("%d %d %d", &dh.tempo.hora, &dh.tempo.minuto, &dh.tempo.segundo);
+//     printf("Digte uma Data: (Dia/Mes/Ano)");
+//     scanf("%d %d %d", &dh.data.dia, &dh.data.mes,&dh.data.ano);
 
-    imprimirData(dh.data);
-    imprimirTempo(dh.tempo);
+//     imprimirData(dh.data);
+//     imprimirTempo(dh.tempo);
     
-    return 0;
-}
+//     return 0;
+// }
 
-//! 5. Crie uma estrutura chamada ContaBancaria com campos para o número da conta, o
-//! nome do titular e o saldo. Escreva funções para depositar dinheiro na conta, sacar
-//! dinheiro da conta e imprimir o saldo atual.
+//!? 5. Crie uma estrutura chamada ContaBancaria com campos para o número da conta, o
+//!? nome do titular e o saldo. Escreva funções para depositar dinheiro na conta, sacar
+//!? dinheiro da conta e imprimir o saldo atual.
 
-struct contaBancaria{
-    int numeroConta;
-    char nomeTitular[50];
-    float saldo;
-};
+// struct contaBancaria{
+//     int numeroConta;
+//     char nomeTitular[50];
+//     float saldo;
+// };
 
-void depositar(struct contaBancaria a){
+// void depositar(struct contaBancaria a){
 
-}
+// }
 
+// void sacar(struct contaBancaria a){
 
-int main(){
+// }
 
-}
+// void imprimirSaldo(struct contaBancaria a){
+
+// }
+
+// int main(){
+
+//     struct contaBancaria CB;
+
+//     printf("Digite o nome do titular:");
+//     fgets(&CB.nomeTitular, sizeof(&CB.nomeTitular), stdin);
+//     printf("Digite o numero da conta:");
+//     scanf("%d", &CB.numeroConta);
+//     printf("Digite o saldo inicial da conta:");
+//     scanf("%f", &CB.saldo);
+
+//     float Valor;
+//     return 0;
+// }
+
+//! 6. Crie uma estrutura chamada Carro com campos para a marca, o modelo e o ano de
+//! fabricação. Declare um array de 3 carros e preencha-o com informações de
+//! diferentes carros. Em seguida, escreva um programa que percorra o array e imprima
+//! as informações de cada carro
+
+// struct Carro{
+//     char marca[50];
+//     char modelo[50];
+//     int ano;
+// };
+
+// int main(){
+    
+//     struct Carro carro[3];
+
+//     for (int i = 0; i < 3; i++){
+//         printf("Qual a marca do carro:");
+//         fgets(carro[i].marca, sizeof(carro[i].marca),stdin);
+//         printf("Qual o modelo do carro:");
+//         fgets(carro[i].modelo, sizeof(carro[i].modelo), stdin);
+//         printf("Qual o ano do carro:");
+//         scanf("%d", &carro[i].ano);
+//         getchar();
+//     }
+
+//     for (int i = 0; i < 3; i++){
+//         printf("\nMarca do carro: %s Modelo do carro: %s  Ano do carro:%d", carro[i].marca, carro[i].modelo, carro[i].ano);
+//     }
+    
+    
+//     return 0;
+// }
+
