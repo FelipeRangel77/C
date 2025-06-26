@@ -426,3 +426,89 @@
     
 // }
 
+//!  1 - Crie uma estrutura chamada "filme" com campos para o nome, ano e uma estrutura "diretor". 
+//! Crie a estrutura "diretor' com os campos nome, país e idade. 
+//! Preencha os dados das estruturas pedindo estes dados para o usuário. Depois exiba estes mesmos dados.
+
+// struct Diretor{
+//     char nome[50];
+//     char pais[50];
+//     int idade;
+// };
+
+// typedef struct Diretor diretor;
+// struct Filme{
+//     char nome[50];
+//     int ano;
+//     diretor diretor;
+// };
+
+// typedef struct Filme filme;
+
+
+
+// int main(){
+
+//     filme filme;
+
+//     printf("digite o nome do filme:");
+//     fgets(filme.nome,sizeof(filme.nome), stdin);
+//     printf("digite o ano do filme:");
+//     scanf("%d", &filme.ano);
+//     getchar();
+//     printf("digite o nome do diretor:");
+//     fgets(filme.diretor.nome, sizeof(filme.diretor.nome),stdin);
+//     printf("digite o pais do diretor:");
+//     fgets(filme.diretor.pais, sizeof(filme.diretor.pais),stdin);
+//     printf("digite a idade do diretor:");
+//     scanf("%d", &filme.diretor.idade);
+
+//     printf("Nome do filme: %s", filme.nome);
+//     printf("Ano do filme:%d\n", filme.ano);
+//     printf("Nome do diretor: %s",filme.diretor.nome);
+//     printf("Pais do diretor: %s", filme.diretor.pais);
+//     printf("Idade do diretor: %d\n",filme.diretor.idade);
+
+// }
+
+
+
+//? 3 - A empresa TechSoluções solicitou sua ajuda para calcular o bônus semestral de seus colaboradores.
+//?  O cálculo do bônus é feito somando o valor total recebido dos primeiros 6 meses do ano e dividindo por 6.
+//?  Para os colaboradores com cargo de "desenvolvedor", o valor do bônus será acrescido de 15%, enquanto para os demais funcionários o cálculo é feito sem esse acréscimo.
+//?  Na main, crie e faça o preenchimento de um vetor com 30 funcionários, perguntando as informações ao usuário do sistema. Lembre-se que existe um vetor de salários que também deve ser preenchido. 
+//?  Faça o cálculo do valor final a ser recebido e atribua à variável "bônus" dentro de cada estrutura. Pode ser feito em qualquer ponto do código antes da exibição. 
+//?  Faça uma função que recebe o vetor de colaboradores e exiba para cada colaborador o nome dele, o cargo e quanto ele deve receber de bônus. 
+struct Colaborador{
+    char nome[50];
+    char cargo[50];
+    float salario [6];
+    float bonus;
+};
+
+typedef struct Colaborador colaborador;
+
+void imprimirDados(colaborador *colaborador, int qtd);
+
+int main(){
+    int qtd;
+
+    printf("Quantas funcionarios existem:");
+    scanf("%d", &qtd);
+    getchar();
+
+    colaborador *colaboradores = malloc(qtd * sizeof(colaboradores));
+
+    if (colaboradores == NULL){
+        printf("ERRO NA MEMORIA!");
+        return 1;
+    }
+    
+    for (int i = 0; i < qtd; i++){
+        printf("Qual a sua função: (digite em letras minusculas):");
+        fgets(colaboradores[i].cargo,sizeof(colaboradores[i].cargo),stdin);
+
+    }
+    
+    
+}
