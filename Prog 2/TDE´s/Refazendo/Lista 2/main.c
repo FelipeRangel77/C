@@ -230,4 +230,5 @@ struct Funcionario{
     float salario[50];
 };
 
+// ? "&" = endereço, "*" = valor
 
