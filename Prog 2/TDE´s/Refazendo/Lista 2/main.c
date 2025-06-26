@@ -303,33 +303,54 @@
 //     return 0;
 // }
 
-//* Crie uma estrutura chamada "time" com campos para o nome, ano e uma estrutura "presidente". Crie a estrutura "presidente" com os campos nome e idade. Preencha os dados das estruturas pedindo estes dados para o usuário. Depois exiba estes mesmos dados. (1,5 pontos).
+//* 2- Crie uma estrutura chamada "time" com campos para o nome, ano e uma estrutura "presidente". Crie a estrutura "presidente" com os campos nome e idade. Preencha os dados das estruturas pedindo estes dados para o usuário. Depois exiba estes mesmos dados. (1,5 pontos).
 
-struct Presidente {
-    char nome[50];
-    int idade;
-};
-typedef struct Presidente presidente;
+// struct Presidente {
+//     char nome[50];
+//     int idade;
+// };
+// typedef struct Presidente presidente;
 
-struct Time {
-    char nome[255];
-    int ano;
-    presidente presidente;
-};
-typedef struct Time time;
-
-
-int main(void) {
-    
-}
+// struct Time {
+//     char nome[255];
+//     int ano;
+//     presidente presidente;
+// };
+// typedef struct Time time;
 
 
-//* A empresa ChicoSoluções solicitou sua ajuda para calcular o bônus anual de seus funcionários. O cálculo do bônus é feito somando o valor total do salário anual do funcionário e dividindo por 15. Para os colaboradores com 10 ou mais anos de empresa o valor do bônus será acrescido de 20%, enquanto para os demais funcionários o cálculo é feito sem esse acréscimo.
+// int main(void) {
+//     time time1;
 
-//* Na main, crie e faça o preenchimento de um vetor a ser alocado dinamicamente, perguntando a quantidade e as informações ao usuário do sistema. Lembre-se que existe um vetor de salários que também deve ser preenchido. (1,5 ponto)
-//? • Exiba o nome do funcionário que receberá o menor salário anual (1,5 ponto)
-//? • Faça uma função que recebe o vetor de funcionários e exiba para cada funcionário o nome dele, o tempo de serviço e quanto ele deve receber de bônus. (1,5 ponto)
-//? Utilize a estrutura abaixo como referência.
+//     printf("digite o nome do time:");
+//     fgets(time1.nome,sizeof(time1.nome),stdin);
+//     printf("digite o ano em que o clube foi criado:");
+//     scanf("%d", &time1.ano );
+//     getchar();
+//     printf("Nome do presidas:");
+//     fgets(time1.presidente.nome, sizeof(time1.presidente.nome),stdin);
+//     printf("Digite a idade do presidente:");
+//     scanf("%d", &time1.presidente.idade);
+//     getchar();
+
+//     printf("Nome do time: %s", time1.nome);
+//     printf("Ano em qual o time foi criado: %d\n", time1.ano);
+//     printf("Nome do Presidente do clube: %s", time1.presidente.nome);
+//     printf("Idade do presidente: %d\n", time1.presidente.idade);
+
+//     return 0;
+// }
+
+
+//* 3- A empresa ChicoSoluções solicitou sua ajuda para calcular o bônus anual de seus funcionários. O cálculo do bônus é feito somando o valor total do salário anual do funcionário e dividindo por 15. Para os colaboradores com 10 ou mais anos de empresa o valor do bônus será acrescido de 20%, enquanto para os demais funcionários o cálculo é feito sem esse acréscimo.
+
+//?! Na main, crie e faça o preenchimento de um vetor a ser alocado dinamicamente, perguntando a quantidade e as informações ao usuário do sistema. Lembre-se que existe um vetor de salários que também deve ser preenchido. (1,5 ponto)
+
+//?! Exiba o nome do funcionário que receberá o menor salário anual (1,5 ponto)
+
+//? Faça uma função que recebe o vetor de funcionários e exiba para cada funcionário o nome dele, o tempo de serviço e quanto ele deve receber de bônus. (1,5 ponto)
+
+//todo Utilize a estrutura abaixo como referência.
 
 // struct Funcionario {
 //     char nome[50];
@@ -339,3 +360,69 @@ int main(void) {
 // };
 
 // typedef struct Funcionario funcionario;
+
+// void exibirDadosFunc(funcionario *funcionarios, int qtd);
+
+// int main(){
+
+//     int qtd;
+//     char nomeMenorSalario[50];
+
+//     printf("quantos funcionarios tem sua empresa:");
+//     scanf("%d", &qtd);
+//     getchar();
+
+//     funcionario *funcionarios = malloc(qtd * sizeof(funcionario));
+
+//     if (funcionarios == NULL){
+//         printf("ERRO!");
+//         return 1;
+//     }
+
+//     for (int i = 0; i < qtd; i++){
+        
+//         float menorSalario = 0;
+
+//         printf("Nome:");
+//         fgets(funcionarios[i].nome, sizeof(funcionarios[i].nome),stdin);
+//         printf("anos na empresa:");
+//         scanf("%d", &funcionarios[i].anosEmpresa);
+//         getchar();
+
+//         float soma = 0;
+
+//         for (int j = 0; j < 12; j++){
+//             printf("Digite seu salario mensal:");
+//             scanf("%f", &funcionarios[i].salarios[j]);
+//             getchar();
+//             soma += funcionarios[i].salarios[j];
+//         }
+
+//         if (soma < menorSalario || menorSalario == 0) {
+//             menorSalario = soma;
+//             strcpy(nomeMenorSalario, funcionarios[i].nome);
+//         }
+        
+//         if (funcionarios[i].anosEmpresa >= 10){
+//             funcionarios[i].bonusFinal =(soma / 15) * 1.20;
+//         }
+//         else{ 
+//             funcionarios[i].bonusFinal = soma/15;
+//         }
+//     }
+//     printf("Nome func menor salario: %s", nomeMenorSalario);
+
+//     exibirDadosFunc(funcionarios, qtd);
+
+//     return 0;
+// }
+
+// void exibirDadosFunc(funcionario *funcionarios, int qtd) {
+//     for (int i = 0; i < qtd; i++){
+//         printf("Nome do funcionario: %s\n", funcionarios[i].nome);
+//         printf("Tempo serviço %d", funcionarios[i].anosEmpresa);
+//         printf("Bonus final: R$%.2f\n", funcionarios[i].bonusFinal);
+//     }
+    
+// }
+
