@@ -492,18 +492,19 @@ void imprimirDados(colaborador *colaboradores);
 
 int main(){
 
-    colaborador colaboradores[30];
+    colaborador colaboradores[2];
     float soma;
 
     
-    for (int i = 0; i < 30; i++){
+    for (int i = 0; i < 2; i++){
         printf("Qual seu nome:");
         fgets(colaboradores[i].nome, sizeof(colaboradores[i].nome),stdin);
-        printf("Qual a sua função: (digite em letras minusculas):");
+        printf("Qual a sua funcao: (digite em letras minusculas):");
         fgets(colaboradores[i].cargo,sizeof(colaboradores[i].cargo),stdin);
-        for (int j = 0; j < 6; i++){
-            printf("digite o seu salario:");
+        for (int j = 0; j < 6; j++){
+            printf("digite o seu salario a cada mes:");
             scanf("%f",&colaboradores[i].salario[j]);
+            getchar();
             soma += colaboradores[i].salario[j];
         }
         if (strcmp(colaboradores[i].cargo,"desenvolvedor")==0){
@@ -522,7 +523,7 @@ void imprimirDados(colaborador *colaboradores){
     for (int i = 0; i < 30; i++){
         printf("Nome: %s", colaboradores[i].nome);
         printf("Cargo: %s", colaboradores[i].cargo);
-        printf("Bonus recebido:%s", colaboradores[i].bonus);
+        printf("Bonus recebido:%f", colaboradores[i].bonus);
     }
     
 }
