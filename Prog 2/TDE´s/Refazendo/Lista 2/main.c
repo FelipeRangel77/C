@@ -218,17 +218,124 @@
 //     return 0;
 // }
 
-//! 7. Crie uma estrutura Funcionario com campos para nome e salário. Crie um programa
-//! que permita ao usuário digitar o número de funcionários e, em seguida, aloque
-//! dinamicamente um array de Funcionarios. Permita que o usuário insira o nome e o
-//! salário de cada funcionário e, em seguida, calcule e imprima o salário médio dos
-//! funcionários.
+//? 7. Crie uma estrutura Funcionario com campos para nome e salário. Crie um programa
+//? que permita ao usuário digitar o número de funcionários e, em seguida, aloque
+//? dinamicamente um array de Funcionarios. Permita que o usuário insira o nome e o
+//? salário de cada funcionário e, em seguida, calcule e imprima o salário médio dos
+//? funcionários.
 //todo UTILIZA PONTEIRO 
 
-struct Funcionario{
-    char nome[50];
-    float salario[50];
-};
-
 // ? "&" = endereço, "*" = valor
+// struct Funcionario {
+//     char nome[50];
+//     float salario;
+// };
 
+// typedef struct Funcionario funcionario;
+
+// int main(){
+//     int n = 0;
+//     float media = 0;
+//     float soma = 0;
+    
+//     printf("quantos funcionarios tem na sua empresa:");
+//     scanf("%d",&n);
+//     getchar();
+
+//     if (n < 1){
+//         printf("Quantidade invalida de funcionarios!");
+//         return 1;
+//     }
+
+//     //* Alocação dinamica de memoria para funcionarios
+//     funcionario *funcionarios = malloc(n * sizeof(funcionario));
+
+
+//     if (funcionarios == NULL){
+//         printf("ERRO!");
+//         return 1;
+//     }
+
+//     // ! mesma coisa
+
+
+//     for (int i = 0; i < n; i++){
+//         printf("Digite o nome do funcionario:");
+//         fgets(funcionarios[i].nome, sizeof(funcionarios[i].nome), stdin);
+//         printf("Salario:");
+//         scanf("%f", &funcionarios[i].salario);
+//         getchar();
+//         soma += funcionarios[i].salario;
+//     }
+    
+//     media = soma / n;
+//     printf("\nSalário médio dos funcionários: %.2f\n", media);
+
+//     // Libera a memória alocada
+//     free(funcionarios);
+
+    
+
+//     return 0;
+// }
+
+
+//! 8. Crie uma estrutura Cliente com campos para nome e idade. Crie um programa que
+//! permita ao usuário digitar o número de clientes e, em seguida, aloque
+//! dinamicamente um array de Clientes. Permita que o usuário insira o nome e a idade
+//! de cada cliente e, em seguida, identifique e imprima o cliente mais velho.
+
+// struct Cliente{
+//     char nome[50];
+//     int idade;
+// };
+
+// void imprimirMaisVelho(struct Cliente a){
+
+// }
+
+// int main(){
+
+//     int n;
+
+//     printf("digite o numero de clintes"); 
+
+//     return 0;
+// }
+
+//* Crie uma estrutura chamada "time" com campos para o nome, ano e uma estrutura "presidente". Crie a estrutura "presidente" com os campos nome e idade. Preencha os dados das estruturas pedindo estes dados para o usuário. Depois exiba estes mesmos dados. (1,5 pontos).
+
+struct Presidente {
+    char nome[50];
+    int idade;
+};
+typedef struct Presidente presidente;
+
+struct Time {
+    char nome[255];
+    int ano;
+    presidente presidente;
+};
+typedef struct Time time;
+
+
+int main(void) {
+    
+}
+
+
+//* A empresa ChicoSoluções solicitou sua ajuda para calcular o bônus anual de seus funcionários. O cálculo do bônus é feito somando o valor total do salário anual do funcionário e dividindo por 15. Para os colaboradores com 10 ou mais anos de empresa o valor do bônus será acrescido de 20%, enquanto para os demais funcionários o cálculo é feito sem esse acréscimo.
+
+//* Na main, crie e faça o preenchimento de um vetor a ser alocado dinamicamente, perguntando a quantidade e as informações ao usuário do sistema. Lembre-se que existe um vetor de salários que também deve ser preenchido. (1,5 ponto)
+//? • Exiba o nome do funcionário que receberá o menor salário anual (1,5 ponto)
+//? • Faça uma função que recebe o vetor de funcionários e exiba para cada funcionário o nome dele, o tempo de serviço e quanto ele deve receber de bônus. (1,5 ponto)
+//? Utilize a estrutura abaixo como referência.
+
+// struct Funcionario {
+//     char nome[50];
+//     int anosEmpresa;
+//     float salarios [12];
+//     float bonusFinal;
+// };
+
+// typedef struct Funcionario funcionario;

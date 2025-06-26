@@ -1,0 +1,2 @@
+//! Crie uma estrutura chama "time" com campos para nome, ano e uma estrutura chamada "PRESIDENTE".Cria "presidente" com os campos nome e idade. 
+//! Preencha os dados das estruturas pedindo estes dados para o usuario depoius exiba estes mesmos dados
