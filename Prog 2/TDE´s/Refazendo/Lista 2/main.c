@@ -151,6 +151,7 @@
 //!? 5. Crie uma estrutura chamada ContaBancaria com campos para o número da conta, o
 //!? nome do titular e o saldo. Escreva funções para depositar dinheiro na conta, sacar
 //!? dinheiro da conta e imprimir o saldo atual.
+//todo UTILIZA PONTEIRO
 
 // struct contaBancaria{
 //     int numeroConta;
@@ -181,7 +182,6 @@
 //     printf("Digite o saldo inicial da conta:");
 //     scanf("%f", &CB.saldo);
 
-//     float Valor;
 //     return 0;
 // }
 
@@ -217,4 +217,17 @@
     
 //     return 0;
 // }
+
+//! 7. Crie uma estrutura Funcionario com campos para nome e salário. Crie um programa
+//! que permita ao usuário digitar o número de funcionários e, em seguida, aloque
+//! dinamicamente um array de Funcionarios. Permita que o usuário insira o nome e o
+//! salário de cada funcionário e, em seguida, calcule e imprima o salário médio dos
+//! funcionários.
+//todo UTILIZA PONTEIRO 
+
+struct Funcionario{
+    char nome[50];
+    float salario[50];
+};
+
 
