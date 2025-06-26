@@ -488,27 +488,41 @@ struct Colaborador{
 
 typedef struct Colaborador colaborador;
 
-void imprimirDados(colaborador *colaborador, int qtd);
+void imprimirDados(colaborador *colaboradores);
 
 int main(){
-    int qtd;
 
-    printf("Quantas funcionarios existem:");
-    scanf("%d", &qtd);
-    getchar();
+    colaborador colaboradores[30];
+    float soma;
 
-    colaborador *colaboradores = malloc(qtd * sizeof(colaboradores));
-
-    if (colaboradores == NULL){
-        printf("ERRO NA MEMORIA!");
-        return 1;
-    }
     
-    for (int i = 0; i < qtd; i++){
+    for (int i = 0; i < 30; i++){
+        printf("Qual seu nome:");
+        fgets(colaboradores[i].nome, sizeof(colaboradores[i].nome),stdin);
         printf("Qual a sua função: (digite em letras minusculas):");
         fgets(colaboradores[i].cargo,sizeof(colaboradores[i].cargo),stdin);
-
+        for (int j = 0; j < 6; i++){
+            printf("digite o seu salario:");
+            scanf("%f",&colaboradores[i].salario[j]);
+            soma += colaboradores[i].salario[j];
+        }
+        if (strcmp(colaboradores[i].cargo,"desenvolvedor")==0){
+            colaboradores[i].bonus = (soma / 6) *1.15;
+        }
+        else{
+            colaboradores[i].bonus = 0;
+        }
+        
     }
     
+    return 0;
+}
+
+void imprimirDados(colaborador *colaboradores){
+    for (int i = 0; i < 30; i++){
+        printf("Nome: %s", colaboradores[i].nome);
+        printf("Cargo: %s", colaboradores[i].cargo);
+        printf("Bonus recebido:%s", colaboradores[i].bonus);
+    }
     
 }
